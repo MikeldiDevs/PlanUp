@@ -28,6 +28,8 @@ $query = "CREATE TABLE `eventos` (
         `img` varchar(200),
         `prioridad` varchar(1) NOT NULL DEFAULT '0',
         `visitas` int(20) UNSIGNED NOT NULL DEFAULT '0',
+        'recomendado' text, 
+        'enlace' text NOT NULL,
         PRIMARY KEY  (`id`)
     ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24;";
 
@@ -48,5 +50,31 @@ if (!mysqli_query($link, $query))
 {
     printf("Error: %s\n", mysqli_error($link));
 }
+
+$query = "CREATE TABLE `favoritos` (
+    `id` int(11) NOT NULL,
+    `email` varchar(100) NOT NULL,
+    UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;";
+
+if (!mysqli_query($link, $query))
+{
+    printf("Error: %s\n", mysqli_error($link));
+}
+
+$query = "CREATE TABLE `categorias` (
+    `id` int(11) NOT NULL auto_increment,
+    `nombre` varchar(40) NOT NULL,
+    `descripcion` varchar(200) NOT NULL,
+    `img` varchar(200) NOT NULL,
+    UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;";
+
+if (!mysqli_query($link, $query))
+{
+    printf("Error: %s\n", mysqli_error($link));
+}
+
+
 mysqli_close($link);
 ?>

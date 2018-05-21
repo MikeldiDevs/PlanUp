@@ -14,12 +14,12 @@ if ($result)
 		$array = mysqli_fetch_array($result);
 		$_SESSION["email"] = $array["email"];
 		$_SESSION["nombre"] = $array["name"];
-		header("Location: index.php");
+		echo '<script>window.location.replace("index.php")</script>';
 	}
 	else
 	{
-		$string = "Email o contrasena incorrectos.";
-  		header("Location: index.php?Message=".urlencode($string));
+		$string = "<p>Email o contraseña incorrectos.</p>";
+  		echo $string;
 	}
 }
 else 

@@ -10,16 +10,16 @@ $query = sprintf("SELECT email FROM usuarios WHERE usuarios.email='%s'", mysqli_
 $result = mysqli_query($link, $query);
 if (mysqli_num_rows($result))
 {
-  $string = "Ya existe una cuenta con ese correo electronico.";
-  header("Location: index.php?Message=".urlencode($string));
+  $string = "<p>Ya existe una cuenta con ese correo electronico.</p>";
+  echo $string;
 } 
 else 
 {
   mysqli_free_result($result);
   if ($pass1 != $pass2)
   {
-    $string = "Las contraseñas deben coincidir, por favor inténtalo de nuevo.";
-  	header("Location: index.php?Message=".urlencode($string));
+    $string = "<p>Las contraseñas deben coincidir, por favor inténtalo de nuevo.</p>";
+  	echo $string;
   } 
   else 
   {

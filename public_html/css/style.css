@@ -5,15 +5,23 @@ html{
 
 body{
 		margin:0;
-		height: 100%;
-    width: 100%;
+        width: 100%;
 		float:left;
+        background-color: #dadada;
+        overflow-x: hidden;
 }
 p {
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
 	margin-block-start: 0;
-margin-block-end: 0;
+	margin-block-end: 0;
+}
+ul, menu, dir {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
 }
 a {
 		-webkit-transition: 0.5s;
@@ -21,21 +29,14 @@ a {
 		transition: 0.5s;
 		text-decoration: none;
 }
-a:hover {
-	 color: black;
-	 background: blue;
-	 text-decoration: none;
-}
 
 /* TOP MENU */
 
 .top-menu {
-		height: 50px;
-    width: calc(100% - 301px);
+	height: 50px;
     background: white;
     float: right;
-    border-left: 1px solid #8080802e;
-		border-bottom: 2px solid #8080802e;
+    width: 100%;
 }
 
 .top-menu-select {
@@ -48,19 +49,42 @@ a:hover {
     height: 50px;
     float: left;
     width: auto;
+	margin-left: 200px;
+}
+.top-menu-logo a:hover{
+    background-color: transparent;
 }
 
 .top-menu-logo img {
     height: 100%;
-	margin-left: 50%;
 }
 
 .top-menu-user {
     float: right;
     height: 50px;
-		background-color: white;
-		color: red;
+	background-color: white;
+	color: red;
+    margin-right: 1%;
 	
+}
+
+.top-menu-user ul {
+    height: 100%;
+    margin-top: 8%;
+	
+}
+
+.top-menu-user li:nth-child(1){   
+    padding-right: 14px;
+    border-right: 1px solid black;
+}
+
+.top-menu-user li:nth-child(2){   
+    padding-left: 10px;
+}
+
+.top-menu-user li {
+
 }
 
 .select-city {
@@ -76,22 +100,26 @@ a:hover {
 	
 /* LEFT MENU */
 .left-menu {
-		float: left;
+	float: left;
     height: 100%;
     width: 300px;
     background-color: grey; 
-		overflow-y: auto;
+	overflow-y: auto;
     overflow-x: hidden;
 }	
 
 .left-menu-ul{
     list-style: none;
-    background-color: #CACFD2;
+    background-color: transparent;
     margin: 0;
     padding: 0;
     float: left;
     width: 100%;
 }
+
+.left-menu-ul a{
+    background-color: transparent;
+}   
 	
 .left-menu-ul-li {
     width: 90%;
@@ -106,17 +134,17 @@ a:hover {
 /* MAIN CONTENT END*/
 
 .main-content {
+    width: 100%;
     float: left;
     height: calc(100% - 52px);
-	width: calc(100% - 300px);
     margin: 0;
     background-color: #dadada;
-    overflow: auto;
+    min-height: 1000px;
 }
 	
 .main-content-search{
-		height:300px;
 		width:100%;
+        height: auto;
 }
 
 .main-content-search img {
@@ -126,10 +154,12 @@ a:hover {
 	
 .search-bar-box {
     margin-top: -10%;
-	width: 100%;
+	width: 40%;
 	height: 30px;
 	text-align: center;
 	position: static;
+    margin-left: 30%;
+    margin-bottom: 10%;
 }
 
 .search-bar {
@@ -138,10 +168,9 @@ a:hover {
 }
 	
 .featured-events{
-	width: 70%;
-    height: auto;
-    margin-left: 15%;
-    margin-right: 15%;
+	width: 100%;
+    margin-left: 4%;
+    margin-right: 5%;
     
 }
 .featured-events-title {
@@ -151,32 +180,39 @@ a:hover {
 }
 
 .featured-event{
-		width: 29.33%;
-		height: 275px;
+	width: 29.33%;
+	height: auto;
     float: left;
-    padding-left: 10px;
-    padding-right: 10px;
-		opacity: 1;
-		display: block;
-		transition: .5s ease;
-		backface-visibility: hidden;
-		position: relative;
+	display: block;
+	transition: .5s ease;
+	backface-visibility: hidden;
+	position: relative;
+    margin-bottom: 2%;
+    margin-right: 1%;
+    margin-left: 1%;
 }	
 	
-.event-list {
-		width: 100%;
+.event-list, .event-list2{
+	width: 100%;
     margin-left: -10px;
     margin-right: -10px;
-    height: 100%;
+    height: auto;
     float: left;
-		margin-top: 10px;
+	margin-top: 10px;
+	display: flex;
+	flex-wrap: wrap;
+    margin-bottom: 5%;
 }	
+.event-list a:hover, .event-list2 a:hover{
+       background-color: transparent;
+       color: red;
+}   
 	
 .recommended-events{
-		width: 70%;
+	width: 100%;
     height: auto;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
     
 }
 .recommended-events-title {
@@ -187,8 +223,8 @@ a:hover {
 }
 
 .recommended-event{
-		width: 29.33%;
-    height: 275px;
+	width: 29.33%;
+    height: auto;
     float: left;
     padding-left: 10px;
     padding-right: 10px;
@@ -196,12 +232,23 @@ a:hover {
 
 .recommended-event img, .featured-event img {
     width: 100%;
-		height: 170px;
+	height: auto;
+    filter: brightness(75%);
 }
 	
-.event-info {
+.category-events
+{
     width: 100%;
+    margin-left: 3%;
+}
+
+.event-info {
+    /*width: 100%;*/
     float: left;
+    flex: 25%;
+}
+.event-info p {
+    color: white;
 }
 .img {
 		opacity: 1;
@@ -224,10 +271,6 @@ a:hover {
 		background-color: #008CBA;
 }
 
-.featured-event:hover .img {
-		opacity: 0.3;
-}
-
 .featured-event:hover .middle {
 		opacity: 1;
 }
@@ -242,10 +285,6 @@ a:hover {
 		-ms-transform: translate(-50%, -50%);
 		text-align: center;
 }
-#vermas
-{
-	margin-bottom: 10%;
-}
 	
 /* MAIN CONTENT END*/
 	
@@ -253,45 +292,62 @@ a:hover {
 /* EVENTS */ 
 
 .category-box {
-    height: 300px;
-    background-color: red;
 }
 
 .category-description {
+    /*
     height: 200px;
-    text-align: center;
+    */
+    text-align: justify;
+    color: white;
+    padding: 2%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .search-filter-box {
-    width: 300px;
-    height: 500px;
+    /*
+    width: 20%;
+    height: 700px;
     float: left;
+    */
+    margin-bottom: 3%;
 }
 
 .search-order-box {
-    float: left;
-    width: calc(100% - 300px);
 }
 
 /* EVENTS END */ 
 	
 /* EVENT */
 
+img.event-banner-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: auto;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    background: white;
+}
+
+
 .event-banner {
     width: 100%;
     height: 300px;
-	background-color: red;
 }
 
 .event-short-info-box {
     width: 100%;
     height: 150px;
-	background-color: purple;
 }
 
 .event-detail-info {
-    width: 100%;
-    height: auto;
+    padding: 4%;
+    margin: 0 2%;
+    background-color: #636363;
+    color: white;
+    font-size: 0.8vw;
 }
 
 .related-events {
@@ -299,7 +355,30 @@ a:hover {
     height: auto;
     margin-top: 50px;
 }
+/*prueba borja*/
 
+.event-place {
+    font-size: 1vw;
+}
+
+.event-date {
+    font-size: 1vw;
+}
+
+.event-hour {
+   font-size: 1vw;
+}
+
+.event-price {
+    font-size: 1vw;
+}
+
+.event-buy-button {
+    font-size: 1vw;
+}
+
+
+/*end prueba borja*/
 
 /* EVENT END */
 
@@ -311,6 +390,9 @@ a:hover {
     text-align: center;
     margin-left: 35%;
 	margin-top: 200px;
+}
+.error {
+    color: red;
 }
 
 
@@ -342,14 +424,340 @@ a:hover {
 	
 /* Favoritos */
 #favoritos {
-  	font-size: 25px;
-	color:gold;
+    color: gold;
+    position: absolute;
+    top: 3%;
+    right: 1%;
 }
 #favoritos:hover {
 	color: gold;
     cursor: pointer;
     background-color: transparent;
 }
+#favoritos .tooltiptext{
+    visibility: hidden;
+    width: 12vw;
+    color: #fff;
+    text-align: center;
+    padding: 2px 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    font-size: 1vw;
+    right: 27%;
+    top: 5%;
+}
+#favoritos:hover .tooltiptext{
+    visibility: visible;
+}
+
+.fa-star-o{
+    color: white;
+}
 
 /* Favoritos END */
+
+/* Sidebar version movil */
+
+.sidebar-login {
+    border-top: 1px solid black;
+    margin-top: 15px;
+    padding-top: 13%;
+    border-bottom: 1px solid black;
+    margin-bottom: 15px;
+    padding-bottom: 13%;
+}
+
+#mySidebar{
+    border-right: 1px solid red;
+}
+#img_movil{
+    width: 9.4em;
+    margin-left: 0;
+    padding-top: 1%;
+}
+/* Sidebar version movil END*/
+/* BOTON SUBIR */
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    width: 4em;
+}
+/* Texto encima de la imagen */
+
+.bottom-left:nth-child(1){
+    position: absolute;
+    bottom: 60%;
+    left: 16px;
+}
+.bottom-left:nth-child(2) {
+    position: absolute;
+    bottom: 15%;
+    left: 3%;
+    font-weight: bold;
+}
+.bottom-left:nth-child(3){
+    position: absolute;
+    bottom: 80%;
+    left: 16px;
+}
+.bottom-left:nth-child(4){
+    position: absolute;
+    bottom: 2%;
+    left: 4%;
+}
+.bottom-left:nth-child(5){
+    position: absolute;
+    bottom: 100%;
+    left: 16px;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    font-weight: bold;
+}
+
+/* Boton ver mas encima de la imagen */
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.featured-event:hover .image {
+  opacity: 0.3;
+}
+
+.featured-event:hover .middle {
+  opacity: 1;
+}
+
+.recommended-event:hover .image {
+  opacity: 1;
+}
+
+.recommended-event:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  text-decoration: none;
+}
+.middle button{
+    color: red;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    border-radius: 10%;
+    white-space: nowrap;
+    padding: 0.5vw 2vw;
+    transition-duration: 0.4s;
+    border: 2px red solid;
+    background-color: white;
+}
+.middle button:hover{
+    cursor: pointer;
+    color: white;
+    background-color: red;
+}
+
+
+
+
+/* Boton ver mas encima de la imagen END */
+
+/* Texto encima de la imagen END */
+
+#filter-table
+{
+    border-spacing: 1em 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+}
+
+#styled-select1{
+    font-family: Arial;
+    padding: 5px;
+}
+#styled-select2{
+    font-family: Arial;
+    padding: 5px;
+}
+.styled-filter
+{
+    font-family: Arial;
+}
+#select-order
+{
+    width: 200px;
+}
+#table-h3 h3{
+}
+#android-app{
+    width: 30%;
+    position: absolute;
+    left: 1%;
+    bottom: 1%;
+}
+#windows-app{
+    width: 25%;
+position: absolute;
+bottom: 1%;
+left: 20%;
+}
+#linux-app{
+   width: 28%;
+    position: absolute;
+    bottom: 0%;
+    left: 56%;
+}
+caption{
+    visibility: hidden;
+}
+
+/* BOTON SUBIR END*/
+@media screen and (max-width: 800px) {
+   /*
+  .featured-event, .recommended-event {
+    flex: 50%;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .main-content {
+    width: auto;
+  }
+  .main-content-search {
+    height: auto;
+  }
+  */
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .main-content {
+  }
+  .main-content-search {
+    height: auto;
+  }
+  .main-content-search img{
+    width: 100%;
+  }
+  .featured-event, .recommended-event {
+    flex: 100%;
+    width: auto;
+    padding-left: 0;
+    padding-right: 0;
+
+  }
+  .featured-events, .recommended-events, .search-filter, .category-events{
+    width: auto;
+    margin-right: 1%;
+    margin-left: 1%;
+    }
+    .event-list, .event-list2{
+        margin: 0;
+    }
+    .search-bar-box {
+        width: 60%;
+        margin-left: 20%;
+    }
+    .search-bar {
+        margin: 0 !important;
+        padding: 12px !important;
+    }
+    /*
+    #table-h3{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    #table-h3 h3{
+        width: auto;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -125%);
+    }
+    */
+    #table-h3{
+       display: none;
+    }
+    .search-filter-box {
+        margin-top: 9%;
+    }
+    caption{
+        visibility: visible;
+        font-size: 2em;
+    }
+    #positioned-td{
+        text-align: left;
+    }
+    #select-order{
+        text-align: right;
+    }
+    .search-filter-2
+    {
+        padding-right: 20%;
+    }
+     #filter-table{
+        border-spacing: 0;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+    #positioned-td{
+        position: relative;
+        left: 11%
+    }
+    #select-order{
+        position: relative;
+        right: 0%;
+    }
+    #favoritos:hover .tooltiptext{
+    visibility: hidden;
+    }
+    .event-place, .event-date, .event-hour, .event-price, #campos_info, .event-buy-button, .event-detail-info{
+        font-size: 4vw;
+    }
+    .modal-content h3{
+        font-size: 24px;
+    }
+    #myBtn {
+        bottom: 0%;
+        right: 0%;
+    }
+
+}
+@media screen and (max-width: 350px) {
+    .search-filter-box {
+        margin-top: 9%;
+        margin-left: 2%;
+    }
+}
+
+/* Responsive END */
 
